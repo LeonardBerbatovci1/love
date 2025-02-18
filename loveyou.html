@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>I Love You! 💖</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #ff7f7f, #ffb3b3);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            width: 80%;
+            max-width: 400px;
+            position: relative;
+            z-index: 2;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .message {
+            font-size: 24px;
+            color: #444;
+            margin-top: 10px;
+            font-weight: bold;
+            line-height: 1.5;
+            animation: pulse 2s infinite ease-in-out;
+        }
+        .btn {
+            padding: 12px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: #ff4d4d;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #ff1a1a;
+            transform: scale(1.1);
+        }
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 75%, 20% 100%, 0% 35%);
+            opacity: 0.8;
+            animation: float 5s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        /* Floating "I Love You" words with new words and colors */
+        .floating-text {
+            position: absolute;
+            font-size: 3rem;
+            font-weight: bold;
+            animation: moveUpDown 5s infinite ease-in-out;
+            opacity: 0.8;
+        }
+        .floating-text:nth-child(1) {
+            left: 5%;
+            animation-duration: 7s;
+            color: #ff4d4d;
+        }
+        .floating-text:nth-child(2) {
+            left: 20%;
+            animation-duration: 6s;
+            color: #ffcc00;
+        }
+        .floating-text:nth-child(3) {
+            left: 40%;
+            animation-duration: 8s;
+            color: #66ccff;
+        }
+        .floating-text:nth-child(4) {
+            left: 60%;
+            animation-duration: 9s;
+            color: #ff99cc;
+        }
+        .floating-text:nth-child(5) {
+            left: 80%;
+            animation-duration: 7s;
+            color: #ff1a1a;
+        }
+        .floating-text:nth-child(6) {
+            left: 10%;
+            animation-duration: 10s;
+            color: #00cc99;
+        }
+        .floating-text:nth-child(7) {
+            left: 30%;
+            animation-duration: 9s;
+            color: #cc66ff;
+        }
+        .floating-text:nth-child(8) {
+            left: 50%;
+            animation-duration: 8s;
+            color: #ff6600;
+        }
+        .floating-text:nth-child(9) {
+            left: 70%;
+            animation-duration: 7s;
+            color: #66cc66;
+        }
+        .floating-text:nth-child(10) {
+            left: 90%;
+            animation-duration: 6s;
+            color: #ff0066;
+        }
+        @keyframes moveUpDown {
+            0% {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-50vh);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>I Love You! 💖</h1>
+        <p class="message">I love you more than words can say. 💖 Every moment spent with you feels like the most precious treasure. 💎 You are my heart, my happiness, my everything. You make life so much more beautiful. Thank you for being you, and thank you for loving me. I am truly blessed. 💕</p>
+        <br>
+        <button class="btn" onclick="window.location.href='index.html'">Back to Start</button>
+    </div>
+
+    <!-- Floating Words with different colors -->
+    <div class="floating-text">I Love You</div>
+    <div class="floating-text">Babygirl</div>
+    <div class="floating-text">Sweetheart</div>
+    <div class="floating-text">Ezhaime</div>
+    <div class="floating-text">My Love</div>
+    <div class="floating-text">Honey</div>
+    <div class="floating-text">Princess</div>
+    <div class="floating-text">Angel</div>
+    <div class="floating-text">My Heart</div>
+    <div class="floating-text">Forever</div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 250);
+    </script>
+</body>
+</html>
